@@ -1,0 +1,52 @@
+/* --- 1. 인쇄 스타일 정의 --- */
+
+@media print {
+    /* 인쇄가 시작되면 body 안의 모든 요소를 일단 숨깁니다. */
+    body * {
+        visibility: hidden;
+    }
+    
+    /* * 인쇄할 이미지(#imageToPrint)와 그 자식 요소만
+        * 다시 보이도록 설정합니다. 
+        */
+    #imageToPrint, #imageToPrint * {
+        visibility: visible;
+    }
+    
+    /* * 이미지를 인쇄 페이지의 왼쪽 상단에 배치하고
+        * 용지 너비에 꽉 차게 만듭니다. 
+        */
+    #imageToPrint {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+    
+    /* 인쇄할 때는 버튼이 보일 필요가 없으므로 숨깁니다. */
+    .print-button {
+        display: none; 
+    }
+}
+
+/* --- 2. (선택) 페이지 꾸미기용 스타일 --- */
+img {
+    max-width: 90%;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.print-button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff; /* 파란색 버튼 */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.print-button:hover {
+    background-color: #0056b3;
+}

@@ -10,6 +10,7 @@
     <title>KIDSNURI</title>
 
     <link rel="stylesheet"  href="css\style.css"/>
+    <link rel="stylesheet"  href="css\coloring.css"/>
 
 </head>
 <body>
@@ -37,7 +38,18 @@
         <section class="content-area">
             <h2>메인 콘텐츠 영역</h2>
             <p>색칠놀이 컨텐츠</p>
-            <img src="https://i.imgur.com/N9waCv8.png">
+
+            <h1>이미지 인쇄하기</h1>
+            <p>아래 버튼을 누르면 웹페이지의 다른 부분(글자, 버튼)을 제외하고<br>오직 이미지만 인쇄할 수 있습니다.</p>
+
+            <img id="imageToPrint" 
+                src="https://i.imgur.com/N9waCv8.png" 
+                alt="인쇄할 색칠공부 도안 예시">
+            <br>
+
+            <button class="print-button" onclick="window.print()">
+                🖨️ 이 이미지 인쇄하기
+            </button>
             
         </section>
         
