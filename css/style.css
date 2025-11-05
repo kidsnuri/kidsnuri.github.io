@@ -70,6 +70,61 @@ body, html {
 }
 
 
+
+/* ---4. Footer (푸터) 스타일 --- */
+
+.site-footer-orange {
+    background-color: orange; /* 요청하신 주황색 배경 */
+    color: white; /* 주황색 배경에 어울리는 흰색 글씨 */
+    padding: 30px 40px;
+    margin-top: 30px;
+    /* 네비게이션 바와 통일감을 주는 약간 어두운 테두리 */
+    border-top: 3px solid #e69500; 
+}
+
+.site-footer-orange .footer-content {
+    max-width: 1200px;
+    margin: 0 auto; /* 중앙 정렬 */
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+    
+    /* (기본) 데스크탑 스타일: 가로 정렬, 양쪽 끝 배치 */
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.site-footer-orange .copyright-text {
+    margin: 0;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.site-footer-orange .footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.site-footer-orange .footer-links li {
+    margin-left: 20px; /* 링크 사이 간격 */
+}
+
+.site-footer-orange .footer-links a {
+    color: white; /* 링크 글씨 흰색 */
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.site-footer-orange .footer-links a:hover {
+    color: white;
+    text-decoration: underline; /* 마우스 올리면 밑줄 */
+}
+
+
+
 /* --- 3. 반응형 설정 (미디어 쿼리) --- */
 
 /* 화면 너비가 768px (태블릿/모바일) 이하일 때 적용 */
@@ -103,71 +158,20 @@ body, html {
     .main-container {
         padding: 10px;
     }
-}
 
-/* ---4. Footer (푸터) 스타일 --- */
-
-.site-footer {
-    background-color: #333; /* 어두운 배경색 */
-    color: #aaa; /* 기본 글자색 (밝은 회색) */
-    padding: 30px 40px; /* 상하 30px, 좌우 40px 패딩 */
-    margin-top: 30px; /* 메인 컨텐츠와 푸터 사이의 간격 */
-    border-top: 3px solid orange; /* 상단에 주황색 테두리 (네비게이션 바와 통일감) */
-}
-
-.site-footer .footer-content {
-    /* (선택) 푸터 내용물이 너무 넓어지지 않게 최대 너비 지정 */
-    max-width: 1200px; 
-    margin: 0 auto; /* 중앙 정렬 */
-    
-    /* 모바일에서는 세로, 넓은 화면에서는 가로 정렬 */
-    display: flex;
-    flex-direction: column; /* 모바일 기본 (세로) */
-    align-items: center; /* 세로 정렬 시 중앙 */
-    text-align: center;
-}
-
-.site-footer .copyright-text {
-    margin: 0;
-    font-size: 0.9em;
-}
-
-.site-footer .footer-links {
-    list-style: none; /* 점 제거 */
-    margin: 0;
-    padding: 0;
-    display: flex;
-    margin-top: 15px; /* 저작권 텍스트와의 간격 */
-}
-
-.site-footer .footer-links li {
-    margin-left: 15px;
-}
-.site-footer .footer-links li:first-child {
-    margin-left: 0; /* 첫 번째 링크는 왼쪽 여백 없음 */
-}
-
-.site-footer .footer-links a {
-    color: #eee; /* 링크 글자색 (더 밝게) */
-    text-decoration: none;
-    font-size: 0.9em;
-}
-
-.site-footer .footer-links a:hover {
-    color: orange; /* 링크에 마우스 올리면 주황색 */
-    text-decoration: underline;
-}
-
-
-/* --- 반응형: 화면이 768px 이상일 때 --- */
-@media screen and (min-width: 768px) {
-    .site-footer .footer-content {
-        flex-direction: row; /* 가로 정렬 */
-        justify-content: space-between; /* 양쪽 끝으로 정렬 */
-        text-align: left;
+    .site-footer-orange .footer-content {
+        /* (덮어쓰기) 가로 정렬을 세로 정렬(column)로 변경 */
+        flex-direction: column; 
+        text-align: center;
     }
     
-    .site-footer .footer-links {
-        margin-top: 0; /* 가로 정렬 시 위쪽 여백 제거 */
+    .site-footer-orange .footer-links {
+        /* (추가) 저작권 텍스트와 간격을 주기 위해 */
+        margin-top: 15px; 
+    }
+
+    .site-footer-orange .footer-links li {
+        margin-left: 10px; /* 모바일에선 간격 살짝 줄임 */
+        margin-right: 10px;
     }
 }
