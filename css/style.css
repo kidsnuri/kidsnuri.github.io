@@ -28,7 +28,7 @@ body {
     justify-content: space-between; /* 양쪽 끝으로 정렬 */
     align-items: center; /* 세로 중앙 정렬 */
     color: white;
-    border-bottom: 2px solid #e69500; /* 약간 더 어두운 주황색 테두리 */
+    /*border-bottom: 2px solid #e69500; /* 약간 더 어두운 주황색 테두리 */
 }
 
 .navbar .logo {
