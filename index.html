@@ -9,14 +9,24 @@
 
     <title>KIDSNURI</title>
 
-    <link rel="stylesheet"  href="css\style.css"/>
+    <link rel="stylesheet"  href="css\common.css"/>
 
 </head>
 <body>
 
     <nav class="navbar">
-        <a href="index.html" class="logo">KIDSNURI</a>
-        <div class="menu">
+
+        <div class="logo-toggle-btn-container">
+            <a href="index.html" class="logo">KIDSNURI</a>
+
+            <button class="nav-toggle-btn" aria-label="메뉴 열기/닫기">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+
+        <div class="menu" id="main-menu">
             <ul>
                 <li><a href="coloring.html">색칠놀이</a></li>
                 <li><a href="#">숨은그림찾기</a></li>
@@ -55,6 +65,9 @@
             </p>
         </div>
     </footer>
+
+
+    <script src="js/common.js"></script>
 
 </body>
 </html>

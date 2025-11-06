@@ -20,7 +20,7 @@ body {
     flex-direction: column; /* 자식 요소(nav, main, footer)를 세로로 쌓음 */
 }
 
-/* --- 1. 네비게이션 바 --- */
+/* --- 네비게이션 바 --- */
 .navbar {
     background-color: orange; /* 요청하신 주황색 배경 */
     padding: 15px 30px;
@@ -30,11 +30,37 @@ body {
     color: white;
 }
 
+/* 로고와 햄버거버튼 컨테이너, 모바일에서 가로로 보이기 위해 설정*/
+.logo-toggle-btn-container {
+    display: flex; 
+    justify-content: space-between; 
+}
+
 .navbar .logo {
     font-size: 1.8em; /* 폰트 크기 */
     font-weight: bold;
     color: white;
     text-decoration: none;
+}
+
+/* --- 햄버거 메뉴 버튼 --- */
+.nav-toggle-btn {
+    display: none; /* (기본) 데스크탑에서는 숨김 */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* 햄버거 아이콘 막대기 3개 */
+.nav-toggle-btn .bar {
+    display: block;
+    width: 28px;
+    height: 4px;
+    background-color: white;
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: 0.3s;
 }
 
 .navbar .menu ul {
@@ -55,7 +81,7 @@ body {
     font-weight: 500;
 }
 
-/* --- 2. 메인 컨텐츠 영역 (3단) --- */
+/* --- 메인 컨텐츠 영역 (3단) --- */
 .main-container {
     display: flex; /* 3단 레이아웃을 위한 Flexbox */
     padding: 20px;
@@ -89,10 +115,10 @@ body {
 
 
 
-/* ---4. Footer (푸터) 스타일 --- */
+/* --- Footer (푸터) 스타일 --- */
 
 .site-footer-orange {
-    background-color: orange; /* 요청하신 주황색 배경 */
+    background-color: orange; /* 주황색 배경 */
     color: white; /* 주황색 배경에 어울리는 흰색 글씨 */
     padding: 30px 40px;
     margin-top: 30px;
@@ -117,8 +143,19 @@ body {
 }
 
 
+/* .is-open 클래스가 버튼에 추가되면 X 모양으로 변경 */
+.nav-toggle-btn.is-open .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+.nav-toggle-btn.is-open .bar:nth-child(2) {
+    opacity: 0;
+}
+.nav-toggle-btn.is-open .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
 
-/* --- 3. 반응형 설정 (미디어 쿼리) --- */
+
+/* --- 반응형 설정 (미디어 쿼리) --- */
 
 /* 화면 너비가 768px (태블릿/모바일) 이하일 때 적용 */
 @media screen and (max-width: 768px) {
@@ -128,23 +165,53 @@ body {
         display: none;
     }
 
+    .logo-toggle-btn-container {
+        width : 100%;
+    }
+
     /* (추가) 모바일에서 네비게이션 바가 잘 보이도록 수정 */
     .navbar {
         flex-direction: column; /* 로고와 메뉴를 세로로 쌓음 */
         gap: 10px; /* 로고와 메뉴 사이 간격 */
     }
+    /* 1. 햄버거 버튼을 보여줌 */
+    .nav-toggle-btn {
+        display: block;
+    }
 
-    .navbar .menu ul {
-        flex-direction: column; /* 메뉴 아이템 세로 정렬 */
+    /* 2. (핵심) 메뉴(.menu)를 기본적으로 숨김 */
+    .menu {
+        display: none; 
         width: 100%;
-        text-align: center;
+        background-color: #e69500; /* 살짝 어두운 주황색 */
+    }
+
+    /* 3. (핵심) JavaScript가 .is-open 클래스를 추가하면 메뉴를 보여줌 */
+    .menu.is-open {
+        display: block;
+    }
+
+    /* 4. 메뉴 아이템을 가로가 아닌 세로로 쌓음 */
+    .menu ul {
+        flex-direction: column;
+    }
+
+    .menu li {
+        margin: 0;
+        text-align: center; /* 가운데 정렬 */
     }
 
     .navbar .menu li {
-        margin: 5px 0; /* 위아래 간격 */
-        background-color: #e69500; /* 메뉴 배경색 구분 */
-        padding: 8px;
-        border-radius: 5px;
+        margin-left: 0; /* 메뉴 사이 간격 */
+    }
+    
+    .menu a {
+        display: block; /* 링크 영역을 넓게 */
+        padding: 12px 0; /* 상하 패딩 */
+    }
+
+    .menu a:hover {
+        background-color: #ffb733; /* 호버 효과 */
     }
 
     /* (추가) 모바일에서 메인 컨테이너 좌우 패딩 줄임 */
@@ -168,3 +235,4 @@ body {
         margin-right: 10px;
     }
 }
+
