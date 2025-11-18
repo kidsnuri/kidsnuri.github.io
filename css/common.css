@@ -219,7 +219,8 @@ body {
         font-weight:400;
     }
 
-    .menu a:hover {
+    .menu a:hover,
+    .menu a:active {
         background-color: oldlace; /* 호버 효과 */
     }
 
