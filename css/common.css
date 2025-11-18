@@ -172,7 +172,6 @@ body {
     /* (추가) 모바일에서 네비게이션 바가 잘 보이도록 수정 */
     .navbar {
         flex-direction: column; /* 로고와 메뉴를 세로로 쌓음 */
-        gap: 10px; /* 로고와 메뉴 사이 간격 */
         padding: 0;
     }
 
@@ -189,7 +188,7 @@ body {
     .menu {
         display: none; 
         width: 100%;
-        background-color: white; /* 살짝 어두운 주황색 */
+        background-color: white; 
     }
 
     /* 3. (핵심) JavaScript가 .is-open 클래스를 추가하면 메뉴를 보여줌 */
@@ -213,10 +212,11 @@ body {
     
     .menu a {
         display: block; /* 링크 영역을 넓게 */
-        padding: 12px 0; /* 상하 패딩 */
+        padding: 10px 0; /* 상하 패딩 */
     }
     .navbar .menu a {
-        color: dimgray;
+        color: dimgrey;
+        font-weight:400;
     }
 
     .menu a:hover {
